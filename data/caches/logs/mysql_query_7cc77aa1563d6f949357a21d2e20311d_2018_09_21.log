@@ -1,0 +1,964 @@
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('48667521fd3f88729cb2e04ceb0525f1', '1537490164', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537461364', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490164', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '48667521fd3f88729cb2e04ceb0525f1' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537488364
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('68260be30116759ea1f5f9040d546ecb', '1537490168', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537461368', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537461368' AND promote_end_date >= '1537461368' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537461368' AND promote_end_date >= '1537461368' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490168', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '68260be30116759ea1f5f9040d546ecb' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537488368
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '68260be30116759ea1f5f9040d546ecb'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490261', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '68260be30116759ea1f5f9040d546ecb' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537488461
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('8e6901eccd2b99260e2e20a36dc41dc0', '1537490329', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537461529', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490329', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '8e6901eccd2b99260e2e20a36dc41dc0' LIMIT 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('d59a66a5c62e6563c447f381a7e8cc91', '1537490338', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537461538', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537461538' AND promote_end_date >= '1537461538' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537461538' AND promote_end_date >= '1537461538' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490338', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537488538
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490519', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1537461719;}' WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537488719
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE add_time >= '1537461719'
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE pay_time >= 1537461719
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537490879', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1537462079;}' WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE add_time >= '1537462079'
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE pay_time >= 1537462079
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491059', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1537462259;}' WHERE sesskey = 'd59a66a5c62e6563c447f381a7e8cc91' LIMIT 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('6ebcca0665d979efb69248ce3bf54413', '1537491239', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491239', ip = '113.88.199.40', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537462439;}' WHERE sesskey = '6ebcca0665d979efb69248ce3bf54413' LIMIT 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('de659d55d8edabb23b4e04ff3ae64929', '1537491463', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537462663', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491463', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'de659d55d8edabb23b4e04ff3ae64929' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'de659d55d8edabb23b4e04ff3ae64929'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537462663' AND promote_end_date >= '1537462663' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537462663' AND promote_end_date >= '1537462663' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('0a4cc5912efe406ae5799669918bae69', '1537491500', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537462700', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491500', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '0a4cc5912efe406ae5799669918bae69' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537489700
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0a4cc5912efe406ae5799669918bae69'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537462700' AND promote_end_date >= '1537462700' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537462700' AND promote_end_date >= '1537462700' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537489700
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0a4cc5912efe406ae5799669918bae69'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_users`
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0a4cc5912efe406ae5799669918bae69'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491821', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '0a4cc5912efe406ae5799669918bae69' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490021
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0a4cc5912efe406ae5799669918bae69'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463021' AND promote_end_date >= '1537463021' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463021' AND promote_end_date >= '1537463021' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490021
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0a4cc5912efe406ae5799669918bae69'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_users`
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490022
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490022
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('6003bb628e319c26262ebd893c51024a', '1537491831', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491831', ip = '113.110.153.132', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537463031;}' WHERE sesskey = '6003bb628e319c26262ebd893c51024a' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '6003bb628e319c26262ebd893c51024a'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463144', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491944', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"last_check\";s:0:\"\";s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";}' WHERE sesskey = '6003bb628e319c26262ebd893c51024a' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490144
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('62c5e80bfc0033806b3dd47cd715b70d', '1537491946', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463146', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463146' AND promote_end_date >= '1537463146' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463146' AND promote_end_date >= '1537463146' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537491946', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '62c5e80bfc0033806b3dd47cd715b70d' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490146
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490146
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '62c5e80bfc0033806b3dd47cd715b70d'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_users`
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490146
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'dcb2f63965f7283de889dbad66a04d08'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463286', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492086', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'dcb2f63965f7283de889dbad66a04d08' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490286
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490286
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '05f51ca85742b5a0f7cdaebb5872e776'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463335', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492135', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '05f51ca85742b5a0f7cdaebb5872e776' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490335
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'cfe59917eb021f3825ee5e2df6a06bcd'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463344', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492144', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'cfe59917eb021f3825ee5e2df6a06bcd' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490344
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '44ea8fdc36df3fa7548ccaeab2cab495'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463360', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492160', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '44ea8fdc36df3fa7548ccaeab2cab495' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490360
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = 'd5dd57f44cb92bd79af9f079dd271845'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463363', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492163', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'd5dd57f44cb92bd79af9f079dd271845' LIMIT 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('680d2c4a5187f5bb3fcd3136910dd9cd', '1537492198', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463398', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463398' AND promote_end_date >= '1537463398' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463398' AND promote_end_date >= '1537463398' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492198', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490398
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490398
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_users`
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT agency_id FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` AS o WHERE 1 
+
+SELECT o.order_id, o.order_sn, o.add_time, o.order_status, o.shipping_status, o.order_amount, o.money_paid,o.pay_status, o.consignee, o.address, o.email, o.tel, o.extension_code, o.extension_id, (   o.goods_amount + o.tax + o.shipping_fee + o.insure_fee + o.pay_fee + o.pack_fee + o.card_fee ) AS total_fee, IFNULL(u.user_name, '匿名用户') AS buyer  FROM `qq`.`ecs_order_info` AS o  LEFT JOIN `qq`.`ecs_users` AS u ON u.user_id=o.user_id WHERE 1  ORDER BY add_time DESC  LIMIT 0,15
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492342', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490542
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490542
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `qq`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `qq`.`ecs_category` AS c LEFT JOIN `qq`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `qq`.`ecs_goods_cat` AS gc , `qq`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `qq`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `qq`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, virtual_sales, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1537516799' AND promote_end_date >= '1537516799') AS is_promote  FROM `qq`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `qq`.`ecs_attribute`
+            WHERE attr_type = 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490543
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `qq`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '2' AND parent_id = '6'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492361', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '680d2c4a5187f5bb3fcd3136910dd9cd' LIMIT 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('7d783d5b28b83696bf1525bc635cb052', '1537492414', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463614', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `qq`.`ecs_admin_message` AS a, `qq`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `qq`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('1') ) 
+
+SELECT pay_id FROM `qq`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('2') ) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463614' AND promote_end_date >= '1537463614' AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1537463614' AND promote_end_date >= '1537463614' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `qq`.`ecs_stats` WHERE access_time > 1537430400
+
+SELECT count(*) FROM `qq`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `qq`.`ecs_feedback` AS f LEFT JOIN `qq`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `qq`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492414', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490614
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `qq`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `qq`.`ecs_users`
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `qq`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490614
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492414', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1537463614;}' WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490614
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `qq`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '2' AND parent_id = '6'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '7d783d5b28b83696bf1525bc635cb052'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `qq`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `qq`.`ecs_category` AS c LEFT JOIN `qq`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `qq`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `qq`.`ecs_goods_cat` AS gc , `qq`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `qq`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `qq`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `qq`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, virtual_sales, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1537516799' AND promote_end_date >= '1537516799') AS is_promote  FROM `qq`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `qq`.`ecs_attribute`
+            WHERE attr_type = 1
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('32ac4568ef0f32f2527a9e62ea18e76c', '1537492423', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537463623', last_ip = '113.88.199.40' WHERE user_id = '1'
+
+SELECT * FROM `qq`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `qq`.`ecs_region` WHERE region_type = '2' AND parent_id = '6'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492423', ip = '113.88.199.40', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '32ac4568ef0f32f2527a9e62ea18e76c' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490623
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('122889d88d4087b90609588b14182266', '1537492604', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492604', ip = '113.110.153.132', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537463804;}' WHERE sesskey = '122889d88d4087b90609588b14182266' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490804
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '122889d88d4087b90609588b14182266'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE add_time >= '1537463804'
+
+SELECT COUNT(*) FROM `qq`.`ecs_order_info` WHERE pay_time >= 1537463804
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492784', ip = '113.110.153.132', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537463984;}' WHERE sesskey = '122889d88d4087b90609588b14182266' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions_data` WHERE expiry < 1537490984
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537490984
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('ae4b8bc275f0e2fe4ec81a6af5dae7d2', '1537492964', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537492964', ip = '113.88.199.40', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537464164;}' WHERE sesskey = 'ae4b8bc275f0e2fe4ec81a6af5dae7d2' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537491164
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('d337433e2da3a12571f0020c4203090d', '1537493144', '113.110.153.132', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537493144', ip = '113.110.153.132', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537464344;}' WHERE sesskey = 'd337433e2da3a12571f0020c4203090d' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537491344
+
+INSERT INTO `qq`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('de4550f29210dbb3f2342ac8733e5f44', '1537493324', '113.88.199.40', 'a:0:{}')
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537493324', ip = '113.88.199.40', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1537464524;}' WHERE sesskey = 'de4550f29210dbb3f2342ac8733e5f44' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537491524
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `qq`.`ecs_sessions` WHERE sesskey = '0b59100d4983b71b3314a375cb458a9e'
+
+SELECT code, value FROM `qq`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `qq`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_admin_user` SET last_login = '1537464654', last_ip = '113.110.153.132' WHERE user_id = '1'
+
+UPDATE `qq`.`ecs_sessions` SET expiry = '1537493454', ip = '113.110.153.132', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = '0b59100d4983b71b3314a375cb458a9e' LIMIT 1
+
+DELETE FROM `qq`.`ecs_sessions` WHERE expiry < 1537491654
+
