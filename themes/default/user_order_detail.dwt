@@ -175,9 +175,9 @@
     <!-- {/if} 是否使用贺卡 --> 
     <!-- {if $order.surplus > 0} 是否使用余额 --> 
     <!-- {/if} --> 
-    <!-- {if $order.integral > 0} 是否使用积分 -->
+    <!-- {if $order.integral > 0} 是否使用购物豆 -->
     <li>{$lang.use_integral}：<b>{$order.integral}</b></li>
-    <!-- {/if} 是否使用积分 --> 
+    <!-- {/if} 是否使用购物豆 --> 
     <!-- {if $order.bonus > 0} 是否使用红包 --> 
     <!-- {/if} --> 
     <!-- {if $order.inv_payee && $order.inv_content} 是否开发票 -->

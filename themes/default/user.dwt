@@ -128,7 +128,7 @@
 			<div  class="box-flex">
 				<li>
 					<h4 class="ellipsis-one"><!--{if $list.user_points neq ''}--> {$list.user_points}<!--{else}-->0<!--{/if}--></h4>
-					<p class="t-remark3">积分</p>
+					<p class="t-remark3">购物豆</p>
 				</li>
 			</div>
 		</ul>

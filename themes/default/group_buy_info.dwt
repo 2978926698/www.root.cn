@@ -46,7 +46,7 @@
        <!--{if $group_buy.restrict_amount > 0} 限购数量-->
         <p> {$lang.gb_restrict_amount}<strong>{$group_buy.restrict_amount}</strong></p>
    <!--{/if}--> 
-   <!--{if $group_buy.gift_integral > 0} 送积分-->
+   <!--{if $group_buy.gift_integral > 0} 送购物豆-->
         <p> {$lang.gb_gift_integral}<strong>{$group_buy.gift_integral}</strong></p>
        <!--{/if}--> 
        <!-- {if $group_buy.status eq 0} 未开始 -->
