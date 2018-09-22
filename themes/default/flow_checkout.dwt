@@ -133,7 +133,7 @@
         </div>
         <!-- {/if} 是否使用余额 --> 
         
-        <!-- {if $allow_use_integral} 是否使用积分 --> 
+        <!-- {if $allow_use_integral} 是否使用购物豆 --> 
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive1">
         <p><b> {$lang.use_integral} </b></p>
         <i class="fa fa-angle-down"></i> </a>
@@ -141,7 +141,7 @@
           <span id="ECS_INTEGRAL_NOTICE" class="notice"></span>
           <input name="integral" type="text" class="input" id="ECS_INTEGRAL" onblur="changeIntegral(this.value)" value="{$order.integral|default:0}" size="10" />
         </div>
-        <!-- {/if} 是否使用积分 --> 
+        <!-- {/if} 是否使用购物豆 --> 
         
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
         <p><b> {$lang.order_postscript} </b></p>

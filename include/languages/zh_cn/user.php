@@ -24,7 +24,7 @@ $_LANG['label_group_buy'] = '我的团购';
 $_LANG['label_booking'] = '缺货登记';
 $_LANG['label_user_surplus'] = '资金管理';
 $_LANG['label_track_packages'] = '跟踪包裹';
-$_LANG['label_transform_points'] = '积分兑换';
+$_LANG['label_transform_points'] = '购物豆兑换';
 $_LANG['label_logout'] = '退出';
 
 /* 会员余额(预付款) */
@@ -268,13 +268,13 @@ $_LANG['order_sn_empty'] = '合并主订单号不能为空';
 $_LANG['merge_order_notice'] = '订单合并是在发货前将相同状态的订单合并成一新的订单。<br />收货地址，送货方式等以主定单为准。';
 $_LANG['order_exist'] = '该订单不存在！';
 $_LANG['order_is_group_buy'] = '[团购]';
-$_LANG['order_is_exchange'] = '[积分商城]';
+$_LANG['order_is_exchange'] = '[购物豆商城]';
 $_LANG['gb_deposit'] = '（保证金）';
 $_LANG['notice_gb_order_amount'] = '（备注：团购如果有保证金，第一次只需支付保证金和相应的支付费用）';
 $_LANG['business_message'] = '发送/查看商家留言';
 $_LANG['pay_order_by_surplus'] = '追加使用余额支付订单：%s';
 $_LANG['return_surplus_on_cancel'] = '取消订单 %s，退回支付订单时使用的预付款';
-$_LANG['return_integral_on_cancel'] = '取消订单 %s，退回支付订单时使用的积分';
+$_LANG['return_integral_on_cancel'] = '取消订单 %s，退回支付订单时使用的购物豆';
 
 /* 订单状态 */
 $_LANG['os'][OS_UNCONFIRMED] = '未确认';
@@ -433,9 +433,9 @@ $_LANG['credit_line'] = '信用额度';
 $_LANG['your_bonus'] = '红包';
 $_LANG['your_message'] = '留言';
 $_LANG['your_order'] = '订单';
-$_LANG['your_integral'] = '积分';
+$_LANG['your_integral'] = '购物豆';
 $_LANG['your_level'] = '您的等级是 %s ';
-$_LANG['next_level'] = ',您还差 %s 积分达到 %s ';
+$_LANG['next_level'] = ',您还差 %s 购物豆达到 %s ';
 $_LANG['attention'] = '关注';
 $_LANG['no_attention'] = '取消关注';
 $_LANG['del_attention'] = '确认取消此商品的关注么？';
@@ -587,8 +587,8 @@ $_LANG['affiliate_num'] = '人数';
 $_LANG['affiliate_view'] = '效果';
 $_LANG['affiliate_code'] = '代码';
 
-$_LANG['register_affiliate'] = '推荐会员ID %s ( %s ) 注册送积分';
-$_LANG['register_points'] = '注册送积分';
+$_LANG['register_affiliate'] = '推荐会员ID %s ( %s ) 注册送购物豆';
+$_LANG['register_points'] = '注册送购物豆';
 
 $_LANG['validate_ok'] = '%s 您好，您email %s 已通过验证';
 $_LANG['validate_fail'] = '验证失败，请确认你的验证链接是否正确';
@@ -616,15 +616,15 @@ $_LANG['show_good_to_you'] = '推荐给你一个好东西';
 
 
 /* 积分兑换 */
-$_LANG['transform_points'] = '积分兑换';
-$_LANG['invalid_points'] = '你输入的积分是不一个合法值';
+$_LANG['transform_points'] = '购物豆兑换';
+$_LANG['invalid_points'] = '你输入的购物豆是不一个合法值';
 $_LANG['invalid_input'] = '无效';
-$_LANG['overflow_points'] = '您输入的兑换积分超过您的实际积分';
+$_LANG['overflow_points'] = '您输入的兑换购物豆超过您的实际购物豆';
 $_LANG['to_pay_points'] = '恭喜您， 你%s论坛%s兑换了%s的商城消费积分';
 $_LANG['to_rank_points'] = '恭喜您， 你%s论坛%s兑换了%s的商城等级积分';
 $_LANG['from_pay_points'] = '恭喜您， 你%s的商城消费积分兑换%s论坛%s';
 $_LANG['from_rank_points'] = '恭喜您， 你%s论坛%s兑换了%s的商城消费积分';
-$_LANG['cur_points'] = '您的当前积分';
+$_LANG['cur_points'] = '您的当前购物豆';
 $_LANG['rule_list'] = '兑换规则';
 $_LANG['transform'] = '兑换';
 $_LANG['rate_is'] = '比例为';
